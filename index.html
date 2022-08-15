@@ -1,13 +1,26 @@
 <html>
-  <head>
-    <title>reCAPTCHA demo: Simple page</title>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  </head>
-  <body>
-    <form action="?" method="POST">
-      <div class="g-recaptcha" data-sitekey="6Le-ZHghAAAAAPFFIMqsr8mxgA-4oRWcFaGbaukZ"></div>
-      <br/>
-      <input type="submit" value="Submit">
-    </form>
-  </body>
+<head>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<form method="post" onsubmit="return submitUserForm();">
+    <div class="g-recaptcha" data-sitekey="6Le-ZHghAAAAAK4awiongQgwr4CHxeOqMWjMe1UN" data-callback="verifyCaptcha"></div>
+    <div id="g-recaptcha-error"></div>
+    <input type="submit" name="submit" value="Submit" />
+</form>
+
+<script>
+var recaptcha_response = '';
+function submitUserForm() {
+    if(recaptcha_response.length == 0) {
+        document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+        return false;
+    }
+    return true;
+}
+ 
+function verifyCaptcha(token) {
+    recaptcha_response = token;
+    document.getElementById('g-recaptcha-error').innerHTML = '';
+}
+</script>
 </html>
