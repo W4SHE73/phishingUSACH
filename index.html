@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>CTF DefconCL</title>
-        <link rel="stylesheet" src="style.css">
-        <link rel="icon" src="img/Defcon.png">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    </head>
-
-    <body>
-        <img src="img/Defcon.png" width="200px" height="200px">
-        <p>Te lo perdiste?</p>
-        <p> No dejes pasar la oportunidad de participar en el CTF realizado en la Defcon 2022, traido hasta Chile!</p>
-        <p>Registrate con el correo y la contrasenna que usas en el</p>
-        <p> Ademas de indicar cual es tu nickname </p>
-        <form id="form" class="form" method="post"> 
-            <input name="mail" id="mail" type="text" placeholder="E-mail" >
-            <input name="password" id="password" type="text" placeholder="password" >
-            <input name="nickname" id="nickname" type="text" placeholder="nickname" >
-            <button id="submitButton">Enviar</button>
-
-        </form>
-
-        </div>
-        <button class="g-recaptcha" 
-        data-sitekey="6Le-ZHghAAAAAK4awiongQgwr4CHxeOqMWjMe1UN" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button>
-
-        <script>
-            function onSubmit(token) {
-              document.getElementById("demo-form").submit();
-            }
-          </script>
-
-        <form action="?" method="POST">
-            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-            <br/>
-            <input type="submit" value="Submit">
-        </form>
-    <script src="script.js"></script>
-    </body>
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6Le-ZHghAAAAAK4awiongQgwr4CHxeOqMWjMe1UN"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
 </html>
